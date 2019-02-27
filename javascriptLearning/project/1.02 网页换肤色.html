@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>网页换肤色</title>
+    <style>
+      #outer {
+        margin: 0 auto;
+      }
+      #navContainer,
+      #btn {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+      #nav {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        border: 1px solid white;
+        background: green;
+        color: white;
+        margin-top: 10px;
+        width: 420px;
+      }
+      #btn div {
+        width: 40px;
+        line-height: 20px;
+        text-align: center;
+        margin: 10px;
+      }
+      #nav div {
+        width: 70px;
+        text-align: center;
+        line-height: 30px;
+        border-right: 1px solid white;
+        font-size: 14px;
+      }
+      /*  注意在附加样式时存在的权重问题 */
+      #nav div#trip {
+        border-right-width: 0;
+      }
+      #red {
+        border-color: red;
+        background: red;
+      }
+
+      #green {
+        border-color: green;
+        background: green;
+      }
+      #black {
+        border-color: black;
+        background: black;
+      }
+    </style>
+    <link href="css/1.02-green.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body id="content">
+    <div id="outer">
+      <div id="btn">
+        <div id="red"></div>
+        <div id="green"></div>
+        <div id="black">黑</div>
+      </div>
+      <div id="navContainer">
+        <div id="nav">
+          <div>新闻</div>
+          <div>娱乐</div>
+          <div>体育</div>
+          <div>电影</div>
+          <div>音乐</div>
+          <div id="trip">旅游</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.onload = function() {
+        var oLink = document.getElementsByTagName("link")[0];
+        var oSkin = document.getElementById("btn").getElementsByTagName("div");
+
+        for (var i = 0; i < oSkin.length; i++) {
+          oSkin[i].onclick = function() {
+            for (var p in oSkin) oSkin[p].className = "";
+            oLink["href"] = "css/1.02-" + this.id + ".css";
+          };
+        }
+      };
+    </script>
+  </body>
+</html>
