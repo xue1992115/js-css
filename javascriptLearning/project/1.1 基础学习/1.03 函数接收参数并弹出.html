@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>接受参数并弹出</title>
+    <style>
+      #content {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <p><input type="text" value="北京" /></p>
+      <p><input type="text" value="朝阳区" /></p>
+      <p><input type="button" value="传参" id="btn" /></p>
+    </div>
+    <script>
+      var hintContent = function(item) {
+          alert(item.value);
+      };
+      window.onload = function() {
+        var btn = document.getElementById("btn");
+        var inputTag = document.getElementsByTagName("input");
+        btn.onclick = function() {
+          for (var i = 0; i < inputTag.length - 1; i++) {
+            hintContent(inputTag[i]);
+          }
+        };
+      };
+    </script>
+  </body>
+</html>
