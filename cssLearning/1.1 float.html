@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 20px;
+        font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+      }
+      p {
+        /* margin: 50px 30px;*/ /*这边的margin不是相对于浮动元素的，是相对于容器的*/
+      }
+      .container {
+        border: 5px solid rgb(111, 41, 97);
+        border-radius: 0.5em;
+        padding: 10px;
+        display: flow-root;
+      }
+      .item {
+        width: 100px;
+        height: 100px;
+        margin: 0 20px 20px 0;
+        background-color: rgba(111, 41, 97, 0.3);
+        float: left;
+      }
+      /* .container:after {
+        content: "";
+        display: table;
+        clear: both;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item"></div>
+      <p>
+        Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi
+        
+      </p>
+      <p>
+        Grape silver beet collard greens avocado quandong fennel gumbo
+      </p>
+    </div>
+  </body>
+</html>

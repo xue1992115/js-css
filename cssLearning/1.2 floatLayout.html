@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>float流体布局</title>
+  </head>
+  <style>
+    .left {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+    .content {
+      text-align: center;
+    }
+    .left1 {
+      float: left;
+      background-color: red;
+      width: 100px;
+    }
+    .right1 {
+      /* margin-left: 100px; */
+      padding-left: 100px;
+      background-color: yellow;
+    }
+    .left2 {
+      float: left;
+      margin-right: 100px;
+      width: 100%;
+      background-color: red;
+    }
+    .right2 {
+      width: 100px;
+      float: left;
+      margin-left: -200px;
+      background-color: yellow;
+    }
+  </style>
+  <body>
+    <p>左中右</p>
+    <div class="left">left</div>
+    <div class="content">content</div>
+    <div class="right">right</div>
+    <p>单侧布局</p>
+    <div class="left1">
+      左侧
+    </div>
+    <div class="right1">
+      右侧
+    </div>
+    <p>单侧布局</p>
+    <div class="left2">
+      左侧
+    </div>
+    <div class="right2">
+      右侧
+    </div>
+  </body>
+</html>
