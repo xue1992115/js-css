@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Table-cell</title>
+    <style>
+      body {
+        margin: 0 auto;
+      }
+      .container {
+        width: 60%;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+      }
+      .content {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      h2 {
+        margin: 0 auto;
+      }
+      .list_row{
+          display: table-row;
+          overflow: hidden;
+      }
+      .list_cell{
+          display: table-cell;
+          width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        display:table-cell的原理：实际上是让元素标签按照td进行显示，对于宽高有响应，对于padding有响应，对margin无响应。
+      </div>
+      <div>
+        table-cell的应用场景：大小不固定的元素进行垂直居中、两栏自适应效果、等高布局
+      </div>
+      <br /><br /><br />
+      <div>
+        <h2>两栏自适应例子</h2>
+        <a class="content"><img src="./img/table-cell.jpg"/></a>
+        <div class="content">
+          <p>
+            我是左侧的内容我是左侧的内容我是左侧的内容我是左侧的内容我是左侧的内容我是左侧的内容
+          </p>
+        </div>
+      </div>
+      <br />
+      <div>
+        <h2>等高自适应例子</h2>
+        <div class="list_row">
+          <div class="list_cell">等高1等高1等高1等高1等高1等高1等高1等高1等高1等高1等高1</div>
+          <div class="list_cell">等高2等高2等高2等高2等高2等高2等高2等高2等高2等高2等高2</div>
+          <div class="list_cell">等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3等高3</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
