@@ -1,9 +1,12 @@
-### 文档流，什么是正常文档流，什么是脱离文档流？
-### float，原理？设置float之后带来的影响？解决办法？对布局的影响？
-### 块级格式化上下文
-### position
-### flex布局
-### tabel-cell
+### 1.文档流，什么是正常文档流，什么是脱离文档流？
+### 2.float，原理？设置float之后带来的影响？解决办法？对布局的影响？
+### 3.块级格式化上下文
+### 4.position
+### 5.flex布局
+### 6.tabel-cell
+### 7.盒模型
+### 8.对齐的方式
+### 9.多栏布局
 
 ## 正常文档流
 正常流中，元素会基于文档模式，从左向右或者从上到下顺序排列的。
@@ -66,6 +69,30 @@ table-cell的原理就是让元素标签像td标签一样展示。可以垂直�
 1. order，数字越小越靠前
 2. flex-grow，flex-shrink，flex-basis（初始大小，px %），flex-grow，flex-shrink允许我们在空间不足或者多余的情况下，扩大或者收缩大小。这两个属性可以数任意的正数，然后按照比例进行放大或者压缩。 也可以使用flex简写。
 
+### 盒模型
+原理是： 每个元素都是一个盒子，包括width,padding,border,margin
+- 盒模型的生成，display: none不生成盒子，display：contents是自己不生成盒模型，但是子元素还是会生成盒模型。
+- 应用场景：当不是直接子元素要适用于弹性布局或者网格布局时会非常有用。
+
+### 对齐
+- justify-content
+- align-content
+- place-content
+- justify-items
+- align-items
+- place-items
+- justify-self
+- align-self
+- place-self
+- row-gap
+- column-gap
+- gap
+
+### 多栏布局（多列布局）
+- 设置栏的数目，column-count
+- 设置栏的宽度，column-width
+- 设置栏的间距，column-gap
+- 设置栏的规则，column-rule
 
 
 
