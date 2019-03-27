@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ScrollSnap</title>
+    <style>
+      img {
+        /* 指定每张图片的捕捉位置与滚动容器可视区域 x 轴中心的位置对齐 */
+        scroll-snap-align: start center;
+      }
+      .photoGallery {
+        margin: 0 auto;
+        width: 500px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        /* 要求每次滚动的结束的位置精确地落在捕捉点上 */
+        scroll-snap-type: x mandatory;
+      }
+      .page {
+        /* 指定每一页文档的顶部为捕捉的位置 */
+        scroll-snap-align: start none;
+      }
+      .docScroller {
+        width: 500px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* 指定捕捉视口应有 100px 的上内边距 */
+        scroll-padding: 100px 0 0;
+        /* 使用非精确捕捉，能允许滚动最终停止在捕捉点的附近而不需要进一步的调整 */
+        scroll-snap-type: y proximity;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="photoGallery">
+      <img src="./img/img1.jpeg" />
+      <img src="./img/img2.jpeg" />
+      <img src="./img/img4.jpeg" />
+      <img src="./img/img5.jpeg" />
+    </div>
+    <div class="docScroller">
+      <div class="page">Page 1</div>
+      <div class="page">Page 2</div>
+      <div class="page">Page 3</div>
+      <div class="page">Page 4</div>
+    </div>
+  </body>
+</html>
