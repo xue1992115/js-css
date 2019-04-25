@@ -1,0 +1,120 @@
+// 变量
+@color: blue;
+.heander {
+    color: @color;
+}
+// mixin
+.bordered {
+    border-top: dotted 1px black;
+    border-bottom: solid 2px black;
+  }
+  #menu a {
+    color: #111;
+    .bordered;
+  }
+  .post a {
+    color: red;
+    .bordered;
+  }
+
+  // 嵌套
+  #header {
+    color: black;
+    .navigation {
+      font-size: 12px;
+    }
+    .logo {
+      width: 300px;
+    }
+  }
+
+  // &
+  .clearfix {
+    display: block;
+    zoom: 1;
+  
+    &:after {
+      content: " ";
+      display: block;
+      font-size: 0;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+  }
+  // 媒体查询
+  .screencolor{
+    @media screen {
+      color: green;
+      @media (min-width:768px) {
+      color: red;
+      }
+      }
+    @media tv {
+      color: black;
+    }
+  }
+// 作用域
+@var: red;
+#page {
+  #header {
+    @var: white;
+    color: @var; // white
+  }
+}
+/*
+块级注释
+*/
+// 变量
+@mySelector: banner;
+
+// 用法
+.@{mySelector} {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}
+// Variables
+@images: "../img";
+
+// Usage
+body {
+  color: #444;
+  background: url("@{images}/white-sand.png");
+}
+
+// 延迟加载
+.lazy-eval {
+    width: @var;
+  }
+  
+  @var: @a;
+  @a: 9%;
+  @var: 0;
+  .class {
+    @var: 1;
+    .brass {
+      @var: 2;
+      three: @var;
+      @var: 3;
+    }
+    one: @var;
+  }
+  // 继承
+  nav ul {
+    &:extend(.inline);
+    background: blue;
+  }
+  .inline {
+    color: red;
+  }
+  
+  .inline h1 {
+    background: yellow;
+  }
+#hello {
+    color:red
+}
+.hello {
+    color: red;
+}
