@@ -4,10 +4,10 @@
 - interface: 用于描述一个对象，以及对象中需要的字段和字段类型。
 - classes: typeScript中的类只是基于原型的OO简写。
 # basic types
-- Boolean
-- Number
-- String
-- Array
+- boolean
+- number
+- string
+- array
 - enum
 - any: 变量的类型，可以是任意的
 - tuple

@@ -255,8 +255,6 @@ h1.error, h1.seriousError {
     - 继承的思想
     - @mixin 重用代码块 @include
     - @import导入外部的文件
-- 嵌套编译的原理
-https://go.gliffy.com/go/publish/4784259
 
 - 参考文献
 sass官方文档：https://www.sass.hk/guide/ 

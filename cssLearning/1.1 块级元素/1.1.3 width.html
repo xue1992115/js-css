@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Width</title>
+  </head>
+  <style>
+    .feature1 {
+      background-color: gray;
+    }
+    .feature2 {
+      background-color: gray;
+      display: inline-block;
+    }
+    .feature2 {
+      background-color: gray;
+      display: inline-block;
+    }
+    table {
+        width: 280px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    table, tr, td {
+        border: 1px solid gray;
+        border-collapse: collapse;
+    }
+  </style>
+  <body>
+    <h1>默认值为：auto</h1>
+    <div class="feature1">特性一是：充分利用可用的宽度，如div，p</div>
+    <p class="feature1">测试</p>
+    <div class="feature2">特性二是：收缩包裹性</div>
+    <p class="feature2">测试</p>
+    <div class="feature3">特性三是：收缩到最小</div>
+    <table>
+      <tr>
+        <td>就1列就1列就1列就1列就1列</td>
+        <td>当父级relative，且宽度很小的时候，例如...</td>
+        <td>当父级relative，且宽度很小的时候，例如...</td>
+      </tr>
+    </table>
+  </body>
+</html>
