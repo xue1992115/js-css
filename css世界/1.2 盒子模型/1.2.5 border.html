@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>border</title>
+  </head>
+  <style>
+    .dotted {
+      width: 150px;
+      height: 150px;
+      border: 149px dotted #cd0000;
+    }
+    .box2 {
+      width: 150px;
+      height: 150px;
+      overflow: hidden;
+    }
+    .box3 {
+      height: 10px;
+      border: double red;
+    }
+    .add {
+      display: inline-block;
+      width: 76px;
+      height: 76px;
+      color: #ccc;
+      border: 2px dashed;
+      text-indent: -12em;
+      transition: color 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .add:hover {
+      color: #34538b;
+    }
+    .add:before,
+    .add:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    .add:before {
+      width: 20px;
+      border-top: 4px solid;
+      margin: -2px 0 0 -10px;
+    }
+    .add:after {
+      height: 20px;
+      border-left: 4px solid;
+      margin: -10px 0 0 -2px;
+    }
+    /* border实现等腰三角形 */
+    .triangle {
+      width: 0;
+      border: 10px solid;
+      border-color: transparent transparent transparent #f30;
+    }
+    /* border的四色边框 */
+    .square {
+      border: 10px solid;
+      width: 0px;
+      height: 0px;
+      border-color: #f30#f30 #396 #0f0;
+    }
+    .borderColor {
+      border: 1px solid;
+    }
+    .box {
+      border-left: 150px solid #333;
+      background-color: #f0f3f9;
+    }
+    /* 清除浮动影响，不能使用overflow:hidden */
+    .box:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    /* 布局主结构 */
+    .box > nav {
+      width: 150px;
+      margin-left: -150px;
+      float: left;
+    }
+    .box > section {
+      overflow: hidden;
+    }
+    /* 导航列表和模块列表 */
+    .nav {
+      line-height: 40px;
+      color: #fff;
+    }
+    .module {
+      line-height: 40px;
+    }
+  </style>
+  <body>
+    <div class="box1"></div>
+    <div class="box2">
+      <div class="dotted"></div>
+    </div>
+    <div class="box3"></div>
+    <a href="" class="add" title="继续上传">添加图片</a>
+    <div class="triangle"></div>
+    <div class="square"></div>
+    <div class="borderColor">border-color</div>
+    <h1>border实现等高布局</h1>
+    <div class="box">
+      <nav>
+        <h3 class="nav">导航1</h3>
+      </nav>
+      <section>
+        <div class="module">模块1</div>
+      </section>
+    </div>
+    <input type="button" value="更多模块" id="moduleMore" />
+    <input type="button" value="更多导航" id="navMore" />
+  </body>
+  <script>
+    var navMore = document.getElementById('navMore'),
+      moduleMore = document.getElementById('moduleMore');
+
+    if (navMore && moduleMore) {
+      var nav = document.querySelector('nav'),
+        section = document.querySelector('section');
+      var navIndex = 1,
+        sectionIndex = 1;
+      var rand = function() {
+        return 'f' + (Math.random() + '').slice(-1);
+      };
+      navMore.onclick = function() {
+        navIndex++;
+        nav.insertAdjacentHTML(
+          'beforeEnd',
+          '<h3 class="nav">导航' + navIndex + '</h3>'
+        );
+      };
+      moduleMore.onclick = function() {
+        sectionIndex++;
+        section.insertAdjacentHTML(
+          'beforeEnd',
+          '<div class="module" style="background:#' +
+            [rand(), rand(), rand()].join('') +
+            '">模块' +
+            sectionIndex +
+            '</div>'
+        );
+      };
+    }
+  </script>
+</html>
