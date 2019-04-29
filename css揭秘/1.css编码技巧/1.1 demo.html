@@ -18,8 +18,35 @@
       font-size: 125%;
       line-height: 1.5;
     }
+    .border{
+      border: solid black;
+      border-width: 1px;
+      height: 20px;
+      border-left-width: 0;
+    }
+    .inheritProperty {
+      width: 200px;
+      background-color: red;
+      border: 1px solid gray;
+      margin: 100px;
+    }
+    .inheritProperty::before {
+      content: '';
+      position: absolute;
+      top: -0.4em;
+      left: 1em;
+      padding: 0.35em;
+      background: inherit;
+      border: inherit;
+      border-right: 0;
+      border-bottom: 0;
+      transform: rotate(45deg);
+      margin: 100px;
+    }
   </style>
   <body>
-    <input type="button" value="Yes！" />
+    <!-- <input type="button" value="Yes！" />
+    <div class="border"></div> -->
+    <div class="inheritProperty">inherit自动继承父类的背景和边框颜色</div>
   </body>
 </html>
