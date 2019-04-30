@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>形状</title>
+  </head>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+    }
+    .boxRadius {
+      background: #58a;
+      border-radius: 50% / 50%;
+    }
+    .boxEmiRadius {
+      background: #58a;
+      border-top-left-radius: 60%;
+      border-top-right-radius: 60%;
+    }
+    .box {
+      background: #58a;
+      transform: skewX(-45deg);
+    }
+    .box > div {
+      transform: skewX(45deg);
+      margin-left: 100px;
+    }
+    .button {
+      position: relative;
+      /* 其他的文字颜色、内边距等样式...... */
+    }
+    .button::before {
+      content: ''; /* 用伪元素来生成一个矩形 */
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      background: #58a;
+      transform: skew(45deg);
+    }
+    .picture {
+      transform: rotate(45deg);
+      overflow: hidden;
+    }
+    .picture > img {
+      max-width: 100%;
+      transform: rotate(-45deg);
+    }
+  </style>
+  <body>
+    <h1>自适应椭圆</h1>
+    <div class="boxRadius"></div>
+    <h1>半椭圆</h1>
+    <div class="boxEmiRadius"></div>
+    <h1>平行四边形</h1>
+    <div class="box">
+      <div>平行四边形</div>
+    </div>
+    <div class="button">平行四边形</div>
+    <h1>切角效果</h1>
+    <div class="picture">
+      <img src="../img/table-cell.jpg" alt="..." />
+    </div>
+  </body>
+</html>

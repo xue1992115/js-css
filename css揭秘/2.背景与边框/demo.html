@@ -7,20 +7,63 @@
     <title>尽量减少代码重复</title>
   </head>
   <style>
-      /* 背景边框 */
-    .box{
-        width: 100px;
-        height: 100px;
-        background: green;
-        border: 5px dotted red;
-        background-clip: padding-box; 
+    div {
+      width: 200px;
+      height: 200px;
+      margin-left: 30px;
+      margin-top: 10px;
     }
-    /* 实现多边框的方法: box-shadow的 */
+    /* 背景边框 */
+    .box {
+      background: green;
+      border: 5px dotted red;
+      background-clip: padding-box;
+    }
+    /* 实现多边框的方法: box-shadow的第四个参数 */
     .boxShdow {
-        background: yellowgreen;
-        box-shadow: 0 0 0 10px #655, 0 0 0 20px deeppink;
-        height: 100px;
-        width: 100px;
+      background: yellowgreen;
+      box-shadow: 0 0 0 10px #655, 0 0 0 15px deeppink;
+    }
+    .boxOutline {
+      background: yellowgreen;
+      border-radius: 20px;
+      outline: 1px dashed black;
+      outline-offset: 5px;
+      margin-top: 30px;
+    }
+    .boxBackgroundPosition {
+      padding: 20px;
+      background: url('../img/table-cell.jpg') no-repeat #58a;
+      background-position: right 20px bottom 20px;
+      border: 2px solid black;
+    }
+    .boxBackgroundOrigin {
+      padding: 20px;
+      background: url('../img/table-cell.jpg') no-repeat right bottom #58a;
+      background-origin: content-box;
+      border: 2px solid black;
+    }
+    .boxCalc {
+      padding: 20px;
+      border: 2px solid black;
+      background: url('../img/table-cell.jpg') no-repeat#58a;
+      background-position: calc(100% - 20px) calc(100% - 20px);
+    }
+    /* 设置渐变的时候，可以设置渐变颜色的开始，如果第二开始的位置设置为0，那么浏览器会自动调整为第一个的位置 */
+    .boxGradient {
+      background: linear-gradient(
+        45deg,
+        #fb3 25%,
+        #58a 0,
+        #58a 50%,
+        #fb3 0,
+        #fb3 75%,
+        #58a 0
+      );
+      background-size: 30px 30px;
+    }
+    .boxHGradient {
+        background: repeating-linear-gradient(50deg, #fb3, #fb3 50px, #58a 0, #58a 100px);
     }
   </style>
   <body>
@@ -28,5 +71,14 @@
     <div class="box"></div>
     <h1>多边框</h1>
     <div class="boxShdow"></div>
+    <div class="boxOutline"></div>
+    <h1>灵活的背景定位</h1>
+    <div class="boxBackgroundPosition">boxBackgroundPosition</div>
+    <div class="boxBackgroundOrigin">boxBackgroundOrigin</div>
+    <div class="boxCalc">boxBackgroundOrigin</div>
+    <h1>条纹背景</h1>
+    <div class="boxGradient"></div>
+    <h1>垂直条纹</h1>
+    <div class="boxHGradient"></div>
   </body>
 </html>
