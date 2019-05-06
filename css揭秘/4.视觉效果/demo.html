@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>视觉效果</title>
-</head>
-<body>
-    <h1>单侧投影</h1>
-</body>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+      }
+      .boxShadow {
+        background-color: black;
+        box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.5);
+      }
+      .boxShadow2 {
+        background-color: black;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+      }
+      .boxShadow3 {
+        background-color: black;
+        box-shadow: 6px 0 6px -5px rgba(0, 0, 0, 0.5), -6px 0 6px -5px black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>投影实现的原理</h1>
+    <p>1、在该元素相同的位置画一个相同的矩形</p>
+    <p>2、2px右移元素</p>
+    <p>3、3px下移元素</p>
+    <p>4、4px高斯模糊处理元素</p>
+    <div class="boxShadow"></div>
+    <h1>如何实现单侧投影？</h1>
+    <div class="boxShadow2"></div>
+    <h1>如何实现双侧投影？</h1>
+    <div class="boxShadow3"></div>
+  </body>
 </html>
